@@ -203,12 +203,12 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-1.jpg" alt="">
               <div class="wow fadeInLeft">
-                <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
-                <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <label>Image File:</label><br/>
+                <input type="file" id="imageLoader" name="imageLoader"/>
+                <button id="upload" onclick="uploadFile()">Upload File!!</button>
+                <canvas id="imageCanvas"></canvas>
               </div>
             </div>
           </div>
@@ -515,7 +515,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="aionkov"><a class="LI-simple-link" href='https://www.linkedin.com/in/aionkov?trk=profile-badge'>Alexander Ionkov</a></div>
+              <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="shaan-gagneja-a46433120"><a class="LI-simple-link" href='https://www.linkedin.com/in/shaan-gagneja-a46433120?trk=profile-badge'>Shaan Gagneja</a></div>
             </div>
           </div>
         </div>
@@ -706,6 +706,49 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCuZ7x-qJS_ZQwXTj023JuMno-fSQjN7m0",
+      authDomain: "meusar.firebaseapp.com",
+      databaseURL: "https://meusar.firebaseio.com",
+      projectId: "meusar",
+      storageBucket: "meusar.appspot.com",
+      messagingSenderId: "910402379715",
+      appId: "1:910402379715:web:1cea3bb783ae1269"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- FireBase javascript -->
+  <script src="js/firebaseJS.js"></script>
+
+  <!-- Watermark javascript -->
+  <script src="js/watermarkjs/watermark.js"></script>
+  <script>
+    var load = false;
+    window.onload = function(){
+      if(!load) {
+        wmark.init({
+          /* config goes here */
+          "position": "bottom-right", // default "bottom-right"
+          "opacity": 50, // default 50
+          "className": "watermark", // default "watermark"
+          "path": "img/logo.png"
+        });
+      
+        load = true;
+      }
+    }
+  </script>
 
 </body>
 </html>
