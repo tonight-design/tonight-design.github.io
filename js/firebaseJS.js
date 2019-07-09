@@ -13,12 +13,7 @@ function handleImage(e){
         img.onload = function(){
             canvas.width = img.width;
             canvas.height = img.height;
-            watermark([img, 'img/logo.png'])
-            .image(watermark.image.lowerRight())
-            .then(function (img) {
-              document.getElementById('composite-image').appendChild(img);
-            });
-            //watermarkImage(img, "Tonight AR");
+            watermarkImage(img, "Tonight AR");
             ctx.drawImage(img,0,0);
             currentImg = img;
         }
